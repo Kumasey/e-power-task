@@ -3,22 +3,24 @@ import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 
 const BlogDetails = (props) => {
-  const [detail, setDetail] = useState({});
+  const [detail, setDetail] = useState([]);
   const id = props.match.params.id;
   useEffect(() => {
     const getData = async () => {
       try {
         const url = `https://blog.epower.ng/wp-json/wp/v2/posts/${id}`;
         const { data } = await axios.get(url);
+        console.log('-------->', data);
+        setDetail({ data });
         console.log('-->', data);
-        setDetail([data]);
-        console.log('-------->', detail);
+        console.log('-->', detail);
       } catch (error) {
         console.log(error);
       }
     };
     getData();
-  }, [detail, id]);
+    // eslint-disable-next-line
+  }, [id]);
   return (
     <>
       <h1>Blog Details </h1>

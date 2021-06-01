@@ -40,6 +40,19 @@ const BlogPost = () => {
     <div>
       <Header />
       <h3>Page {pageNumber}</h3>
+      <div className="pagination">
+        <button
+          className="previous"
+          type="button"
+          onClick={handlePrevious}
+          disabled={pageNumber === 1 ? true : false}
+        >
+          Previous
+        </button>
+        <button className="next" type="button" onClick={handleNext}>
+          Next
+        </button>
+      </div>
       <div className="loading">
         {loading ? (
           <Loading />
