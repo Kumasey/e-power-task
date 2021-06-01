@@ -11,14 +11,14 @@ const BlogDetails = (props) => {
         const url = `https://blog.epower.ng/wp-json/wp/v2/posts/${id}`;
         const { data } = await axios.get(url);
         console.log('-->', data);
-        setDetail(data);
-        // console.log('-------->', detail);
+        setDetail([data]);
+        console.log('-------->', detail);
       } catch (error) {
         console.log(error);
       }
     };
     getData();
-  }, [id]);
+  }, [detail, id]);
   return (
     <>
       <h1>Blog Details </h1>

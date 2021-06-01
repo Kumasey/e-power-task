@@ -93,3 +93,8 @@ h3 {
   text-align: center;
   color: #1888a5;
 }
+
+.pagination button:disabled {
+  background: #e6f3d8;
+  cursor: not-allowed;
+}
