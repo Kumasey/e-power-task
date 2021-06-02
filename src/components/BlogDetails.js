@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 
 const BlogDetails = (props) => {
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState({
+    title: { rendered: ' ' },
+    excerpt: { rendered: ' ' },
+  });
   const id = props.match.params.id;
   useEffect(() => {
     const getData = async () => {
@@ -11,9 +14,9 @@ const BlogDetails = (props) => {
         const url = `https://blog.epower.ng/wp-json/wp/v2/posts/${id}`;
         const { data } = await axios.get(url);
         console.log('-------->', data);
-        setDetail({ data });
+        setDetail(data);
         console.log('-->', data);
-        console.log('-->', detail);
+        console.log('---------------->', detail);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +29,45 @@ const BlogDetails = (props) => {
       <h1>Blog Details </h1>
       <div className="img-cont">
         <img src={detail.featured_image} alt="" />
-        <p>{detail.title}</p>
+        <h5>{detail.title.rendered}</h5>
+        <br />
+        <h2
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <img src={detail.featured_image} alt="" />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
+        <h2
+          dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+        />{' '}
+        <br />
       </div>
       <Footer />
     </>
