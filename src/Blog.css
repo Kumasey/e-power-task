@@ -89,6 +89,16 @@ h4 {
   text-align: center;
 }
 
+.img-cont > img {
+  max-width: 60%;
+  max-height: auto;
+}
+
+h1 > span > a {
+  font-size: large;
+  color: #25ebf1;
+}
+
 h3 {
   text-align: center;
   color: #1888a5;
@@ -97,4 +107,18 @@ h3 {
 .pagination button:disabled {
   background: #e6f3d8;
   cursor: not-allowed;
+}
+
+.container-div {
+  text-align: center;
+}
+
+.avatar > img {
+  max-width: 10%;
+  max-height: auto;
+}
+
+h5 {
+  font-size: larger;
+  color: #1888a5;
 }
