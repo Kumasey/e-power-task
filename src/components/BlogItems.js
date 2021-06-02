@@ -15,7 +15,6 @@ const BlogItems = ({ item }) => {
             {' '}
             EXCERPT: <br />
             <div dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-            {/* {item.excerpt.rendered} */}
           </div>
         </div>
       </div>
