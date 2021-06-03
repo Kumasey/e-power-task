@@ -17,7 +17,7 @@ const BlogPost = () => {
       try {
         const url = `https://blog.epower.ng/wp-json/wp/v2/posts?page=${pageNumber}&per_page=6`;
         const { data } = await axios.get(url);
-        console.log('=====>', data);
+        // console.log
         setBlogs([...data]);
         setLoading(false);
       } catch (error) {

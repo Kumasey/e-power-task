@@ -10,6 +10,7 @@ const BlogDetails = (props) => {
     title: { rendered: ' ' },
     excerpt: { rendered: ' ' },
     post_author: { name: ' ' },
+    content: { rendered: ' ' },
   });
   const [loading, setLoading] = useState(true);
   const id = props.match.params.id;
@@ -20,7 +21,7 @@ const BlogDetails = (props) => {
         const { data } = await axios.get(url);
         setLoading(false);
         setDetail(data);
-        console.log('-->', data);
+        // console
       } catch (error) {
         setLoading(false);
         console.log(error);
@@ -50,33 +51,9 @@ const BlogDetails = (props) => {
             dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
           />{' '}
           <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
           <img src={detail.featured_image_thumbnail} alt="" />
           <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
-          />{' '}
-          <br />
-          <div
-            dangerouslySetInnerHTML={{ __html: detail.excerpt.rendered }}
+            dangerouslySetInnerHTML={{ __html: detail.content.rendered }}
           />{' '}
           <br />
           <h2
